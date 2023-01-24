@@ -1,0 +1,64 @@
+entity_id 	entity_type         group             key                 	value
+4        	ORGANIZATION        SMS_SEND        SENDER_NUMBER        	73555            (Consider renaming to SENDER_NUMBER_SHORT_CODE)
+4         	ORGANIZATION        SMS_SEND        SENDER_NUMBER_LONG_CODE    	98231023123  
+
+if(Key == )
+{
+}
+
+SELECT * FROM organization o
+WHERE organization_id = 12;
+
+
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 15 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'ORGANIZATION' AND is_active = 1;
+
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 7 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'PARTNER' AND is_active = 1;
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 0 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'SYSTEM' AND is_active = 1;
+
+id	group_config	key_config	value		entity_type	entity_id   created_by	   is_active
+28	SMS_SEND	SENDER_NUMBER	19198918881	SYSTEM		0	    SYSTEM	      1
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+	group_config	key_config		value		entity_type	entity_id   created_by	   support_short_code	is_active
+	SMS_SEND	SENDER_NUMBER_long	19198918881	'ORGANIZATION'    2	    PARTNER	      	0	   	   1
+	SMS_SEND	SENDER_NUMBER		12345		'ORGANIZATION'    2	    PARTNER	      	1		   1
+
+-----------------------------------------------------------------------------------------------------------------------------------
+if(support_short_code)
+{
+}
+else{
+	} ---> @Table(name = "phone_numbers")
+
+
+SELECT * FROM organization o
+WHERE organization_id = 109;
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 109 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'ORGANIZATION' AND is_active = 1;
+
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 18 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'PARTNER' AND is_active = 1;
+
+SELECT * FROM customer_configuration cc   
+where entity_id = 0 AND group_conf ='SMS_SEND' AND key_conf ='SENDER_NUMBER' AND entity_type = 'SYSTEM' AND is_active = 1;
+
+
+SELECT * from customer_configuration
+WHERE group_conf = 'SMS_SEND';
+
+SELECT * from customer_configuration
+WHERE key_conf ='SENDER_NUMBER'
+
+
+SELECT * from customer_configuration
+WHERE id = 28;

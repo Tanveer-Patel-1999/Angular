@@ -1,0 +1,12 @@
+DEV DB
+host = rds.dev.internalpp.net
+port = 3306
+username = ppAdmin
+db name = customer_management
+
+password = YpmRqyH0zx0ahMwFeWgT
+QA DB
+host = qa-rds-201704052339-rdscluster-v8tpxp46amyb.cluster-crwaybpoxitk.us-east-1.rds.amazonaws.com
+port = 3306
+username = ppAdmin
+db name = customer_management

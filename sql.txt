@@ -1,0 +1,403 @@
+SQL
+===
+1:SQL :--> structure query langauge
+2:SQl is programming language used to intercation with database.
+
+SQl Application
+===============
+CURD
+C:--> Create
+R:--> Read
+U:--> Update
+D:--> Delete
+
+SQL Commands
+============
+1:DDl:-->data defination language
+--> create
+--> alter
+--> drop
+
+2:DML:--> data manipulation language
+--> select
+--> insert
+--> update
+--> delete
+
+3:DCL:--> data control language
+--> grant
+--> revoke
+
+Database
+========
+1:Database is system that allow users to store and organise the data
+
+SQl Structure
+=============
+[ Database ---> Tables ---> Data (Rows and columns) ]--> RDBMS
+
+
+Data Types
+==========
+1:Data types is used to define which type of data the column can store in the table.
+2:Data types is define while creating table in the database.
+3:Data types divided into three categories
+	1:String:-->  		char, varchar, etc
+	2:Numeric:--> 		int, float, bool, etc
+	3:Date and time: -->	date, datetime, etc
+
+
+Primary and Foreign Keys
+========================
+1:Primary key(PK):
+
+--> A table can have only one primary key
+--> primary key should be unique
+--> primary key should not be "NOT NULL" values
+
+2:Foreign key(FK):
+
+--> foreign key is a column used to link two or more tables togather.
+--> A table can have any number of foreign key
+--> Foreign key can contain duplicate value
+--> Foreign key should have "NULL" values 
+
+
+Constraints
+===========
+--> Constraints are used to specify the rules for filling the data in a table.
+--> Constraints are helps for data accuracy and data reliability in the table.
+--> we can declare a Constraints when we creating a table.
+	Syntax
+		CREATE TABLE table_name(
+			coulmn1 datatype constraints,
+			coulmn2 datatype constraints,
+			coulmn3 datatype constraints,
+			.......
+			);
+
+Commonly used constraints in SQL
+================================
+1:NOT NULL:--> 		Ensures that column can not hava NULL value
+2:UNIQUE:-->   		Ensures that all values in a cloumn are differnet.
+3:PRIMARY KEY-->	It is Combination of a NOT NULL and UNIQUE
+4:FOREIGN KEY-->	Used to link multiple tables togather
+5:CHECK-->		Ensure that the values in a cloumn satisfies a specific condition
+6:DEFAULT-->		Set a default value for a cloumn if no value is present
+7:CREATE INDEX-->	By using this we can easily identify quickly(1,2,3,...)
+
+
+CREATE DATABASE 
+===============
+--> CREATE DATABASE statement is used to create a new database.
+	Syntax
+	------
+		CREATE DATABASE <database_name>
+
+	Example
+	-------
+		CREATE DATABASE Tanveer;
+
+Create Table
+============
+--> CREATE TABLE statement is used to create a new table in a database.
+	Syntax
+	------
+		CREATE TABLE table_name(
+			coulmn1 datatype constraints,
+			coulmn2 datatype constraints,
+			coulmn3 datatype constraints,
+			.......
+			);
+
+	Example
+	------
+		CREATE TABLE customer(
+			"ID" int8 PRIMARY KEY,
+			"Name" varchar(50) NOT NULL,
+			"Age" int NOT NULL,
+			"City" char(50)
+			"Salary" numeric
+			);
+
+-------------------------
+	        create table employee(
+			emp_id integer PRIMARY KEy,
+			emp_name varchar(50) not NULL
+			);
+
+Retrivew data from table
+========================
+--> SELECT statement is used to Retrivew a data from table in a database.
+
+		Syntax
+		------
+			SELECT * FROM <Table_name>
+		
+		Example
+		-------
+			SELECT * FROM customer;
+
+
+Insert data into table
+=======================
+--> INSERT INTO statement is used to insert new record into table
+	Syntax
+	------
+		INSERT INTO table_name
+			(column1,column2,column3,....columnN)
+		VALUES  (value1,value2,value3,.......valueN);
+
+	example:
+	--------
+		INSERT INTO customer
+		("ID","Name","Age","City","Salary")
+		VALUES
+		(4,'Tanveer',22,'Karoshi',500000);
+
+-----------------------------------------
+		INSERT INTO customer
+				VALUES
+				(1,'Tanveer',22,'Karoshi',500000),
+				(2,'Anik',26,'Karoshi',500000),
+				(3,'Asif',24,'Karoshi',500000);
+
+
+Update data into table
+=====================
+--> UPDATE Statement is used to update existing rows in a table.
+
+
+	Syntax
+	------
+		UPDATE TABLE_NAME
+		SET COLUMN1 = VALUE1, COLUMN2 = VALUE2
+		WHERE ID = VALUE
+
+	Syntax
+	------
+		UPDATE TABLE_NAME
+		SET COLUMN1 = VALUE1, COLUMN2 = VALUE2
+		WHERE CONDITION;
+
+	example
+	-------
+		UPDATE Customer
+		SET "Age" = 25, "Salary" = 100000
+		WHERE "ID" = 3;
+
+
+Delete Values in Table
+=======================
+--> DELETE Statement is used to delete existing records in a table
+
+	Syntax
+	------
+		DELETE FROM TABLE_NAME 
+		WHERE CONDITION;
+
+	Example
+	-------
+		DELETE FROM CUSTOMER
+		WHERE "ID" = 4;
+
+
+Alter table
+===========
+-->ALTER TABLE statement is used to add, delete or modify columns in an existing table.
+
+A:--> ADD CLOUMN
+=================
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		ADD CLOUMN CLOUMN_NAME;
+
+
+B:--> DROP CLOUM
+===============
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		DROP CLOUMN CLOUMN_NAME;
+
+
+C:--> MODIFFYF COLUMN / ALTER CLOUMN
+=====================================
+	Syntax
+	------
+		ALTER TABLE TABLE_NAME
+		ALTER CLOUMN CLOUMN_NAME;
+
+
+DROP and Truncate Table
+======================
+
+DROP
+=====
+--> DROP TABLE statement is used to delete a table from a database permanantely.
+	syntax
+	------
+		DROP TABLE TABLE_NAME;
+
+	Example
+	-------
+		DROP TABLE employee;
+
+TRUCATE
+=======
+--> TRUNCATE TABLE statement is used to delete the data inside a table but not table itself
+	syntax
+	------
+		TRUNCATE TABLE TABLE_NAME;
+
+	Example
+	-------
+		TRUNCATE TABLE employee;
+
+
+SELECT Statement
+================
+--> SELECT Statement is used to retriew / select data from a database.
+--> BY using SELECT Statement we can retriew all data or particular data from a data base
+
+	syntax
+	------
+		SELECT * FROM TABLE_NAME; ---> select all data
+
+	example
+	=======
+		SELECT * FROM Student;
+
+	syntax
+	------
+		SELECT CLOUMN_NAME FROM TABLE_NAME; ---> select data based on the cloumn
+		
+	example
+	=======
+		SELECT std_name FROM Student;
+
+	syntax
+	------
+		SELECT DISTINCT CLOUMN_NAME FROM TABLE_NAME; --> to select distinct / unique feild available in the table.
+
+	example
+	=======
+		SELECT DISTINCT std_grade FROM Student;
+
+WHERE clause
+============
+--> WHERE clause is used to filter records
+--> It is used to extract only those records that fullfill a specific condition.
+	Syntax
+	------
+		SELECT * FROM TABLE_NAME
+		WHERE CONDITION; 
+
+	Example
+	-------
+		SELECT * FROM Student
+		WHERE std_grade = 'A';
+
+
+Operators in SQL
+================
+--> The character and words are reserved in the SQL are called as operators.
+--> Operators are mostly used with where caluse.
+
+Most used Operators
+===================
+1:Arithmetic operators
+2:Comparison operators
+3:Logical operators
+4:Bitwise operators
+
+1:Arithmetic operators
+======================
+--> It is used to peform arthmetic operation on numeric values.
+--> [ + , - , * , /, % ] 
+
+2:Comparison operators
+======================
+--> It is used to compare two different data of sql table
+--> [ =, !=, > , < , >= , <=]
+
+3:Logical operators
+===================
+--> It is used to perform the boolean operations
+--> [ALL, IN , BETWEEN , LIKE , AND , OR , NOT , ANY]
+
+4:Bitwise operators
+===================
+--> It is used to perform bit operation on the Integer value.
+--> [ bitwise AND(&) , bitwise OR(|) ]
+
+
+LIMIT clause
+============
+--> limit is used to retriew how many row u want to retreiw.
+	syntax
+	------
+		SELECT * FROM TABLE_NAME
+		LIMIT 3;
+
+	Example
+	-------
+		SELECT * FROM Student 
+		LIMIT 3;
+
+
+ORDER BY clause
+===============
+--> The ORDER BY is used to sort the result set in ascending (ASC) or descending (DESC) order.
+	syntax
+	------
+		SELECT * FROM TABLE_NAME
+		ORDER BY CLOUMN_NAME ASC;
+ 
+
+	Example --> ascending
+	-------
+		SELECT * FROM Student 
+		ORDER BY std_name;
+
+	Example --> ascending
+	-------
+		SELECT * FROM Student 
+		ORDER BY std_name DESC;
+
+
+
+Functions
+================
+--> Function is used to perform a specific task.
+--> Function accept input parameter perform an action and then return result.
+--> They are two types of functions.
+	1:System define function
+	2:user define function
+
+STRING FUNCTION
+===============
+--> function that perform any task on string is called String function.
+--> String function are used to perform an operation on input string and return an output string.
+
+1:UPPER() --> Convert the value of feild to uppercase.
+2:LOWER() --> Convert the value of feild to lowercase.
+3:LENGTH()--> return the length of text feild.
+4:SUBSTRING() --> extracts a substring from a string.
+5:Now() --> return current system date and time
+6:FORMAT() --> used to set the formateof a feild.
+7:CONCAT() --> add two or more string togather.
+8:REPLACE() --> Replace a existing string with new subString
+9:TRIM() -->  It is used to remove the space between words or characters
+
+
+
+
+
+
+		
+
+
+
+

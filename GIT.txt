@@ -1,0 +1,130 @@
+GIT --> IT IS USED FOR VERSION CONTROL SYSTEM
+===
+--> it is developed to co-ordinate the working among the developers.
+--> it is track the change made in the set of file.
+
+============================
+1:BRANCH:--> aise repository jo main branch say nikali hue hai.
+       --> repository diverges from main working directory.
+
+2:CHECKOUT:--> it is used to switching between different version of target entity.
+
+3:CLONE:--> making copy of repository from server.
+
+4:MERGE:--> combine one repository into another repository(combining branches)
+
+5:ORIGIN:--> the first repository when we clone the repository.
+	--> Remote repository from a project was initally cloned.
+
+6:PULL:--> receive the data from server (GITHUB)
+
+7:PUSh:--> upload local repository to server.
+
+8:GIT IGNORE:--> if u want to untrack or skip the file (use for intentionally untrack the file)
+
+9:GIT DIFF:--> if we want to seen the changes (shows chnages between commit, working tree etc)
+
+10:GIT RM:--> if we want to remove the files .
+
+
+
+===================================================
+step
+----
+1:right click on folder ---> open with "gitbash here".
+1:check git version ---> git --version
+3:set a name --->  git config --global user.name "Tanveer"
+4:set a email --->  git config --global user.name "tanveerpatet1999@gmail.com"
+5:to check the name and email is set correctly ---> git config --list
+6:check the number of ---> ls --> list of file display
+
+basic step 
+===========
+7: how to initilized or used the git in our project --> git init
+8: check the status ---> git status
+9: git add <file_name> | git add . | git add -A (all file is added)
+10: commit the code -->  git commit -m "first commit"
+11: git status
+
+remove your mistke
+==================
+12: git checkout <file_name> ---> undo your mistake
+
+
+track the chnages
+=================
+13: track the changes before the staging area --> git diff
+14: track the changes in staging area but not commited -->  git diff --staged
+15: track the changes in staging area after the commit--> git HEAD
+16: show the object which are add --> git show
+
+
+logs
+===
+17: check the logs | commites --> git log
+18: check the log how much u want --> git log -p 5 | git log -p -5
+19: check the modified file ---> git log --stat
+
+removing the file --> rm 
+=================
+21: remove file from staging area ---> git rm --cached <file_name>  (untrack)
+22: delete the file from staging area --> git rm -f service.html
+
+
+branching
+=========
+1: using checkout we can move from one branch to another branch.
+
+master branch ---> tanveer(dev 1)
+(main branch)	   (tanveer branch)
+	|
+	|
+       anik (dev 2)
+	(anik branch)
+
+1: list of checks the branches --> git branch --list
+2: create a branch --> git branch <branch_name>
+3: move one branch to another branch (switch the branch)using "checkout" --> git checkout <branch_name>
+4: delete a branch --> git branch -d <branch_name>
+
+merge branching one into another
+================================
+5: merg on branch into another branch ---> git merge <branch_name>
+	step:1--> first checkout to your master branch --> git checkout master
+	     2--> merge branch into master --->  git merge tanveer
+	     3--> all file present in the tanveer branch are merge into master
+	     4--> after merge you delete your tanveer branch
+
+note
+====
+1: create a branch and also checkout the branch using single command ---> git checkout -b <branch_name>
+
+2: staging and commite  using single command ---> git add -A && git commit -am 'message'
+
+
+==================================================
+git hub
+===========================
+1: git init
+2: git status
+3: git add .
+4: git status
+5: git commit -m " "
+6: git status
+7: git log
+
+
+8: git remote add origin https://github.com/Tanveer-Patel-1999/git-practice.git
+9: git remote -v
+10: git branch -M main --> using this commnad we can change our master branch to main branch.
+11: git push -u origin main
+
+
+
+
+
+
+
+
+
+
