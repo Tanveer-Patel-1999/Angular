@@ -1,0 +1,19 @@
+step 1= git status
+step 2= git stash( step 2 and 4 are applicable only if we are on a different branch)
+step 3= git pull
+step 4= git stash pop
+step 5= mvn clean install
+step 6= git checkout -b bugfix/PPY-10144
+step 7= git status
+step 8= git add .
+step 9= git commit -m "PPY-10144: added organization name for submit payment screen"
+step 10= git push -u origin bugfix/PPY-10144
+
+
+
+merge 
+aws dev 
+code build
+start build
+
+

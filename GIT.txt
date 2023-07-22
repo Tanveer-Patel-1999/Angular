@@ -120,7 +120,25 @@ git hub
 11: git push -u origin main
 
 
+======================================================
+open git bash here
+=======================================================
+$ git init
 
+$ git status
+
+$ git add .
+
+$ git status
+
+$ git commit -m "git notes"
+
+$ git status
+
+$ git remote add origin url
+
+$ git push -u origin master
+====================================================
 
 
 
